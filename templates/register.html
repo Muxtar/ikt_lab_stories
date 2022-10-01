@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block main %}
+    <section class="ftco-section contact-section register">
+            <div class="container">
+                <div class="row block-9 justify-content-center">
+                    <div class="col-md-6 order-md-last d-flex">
+                        <form action="" class="bg-light p-5 contact-form" method="post">
+                            {% csrf_token %}
+                            <a class="navbar-brand center" href="#">Stories<span>.</span></a>
+                            {% for i in forms %}
+                                <div class="form-group">
+                                    {{ i }}
+                                    {% if i.errors %}
+                                        <ul>
+                                            {{ i.errors }}
+                                        </ul>
+                                    {% endif %}
+                                    {% comment %}
+                                        {{ i.label_tag }}
+                                    {% endcomment %}
+                                    <!-- <input type="text" class="form-control" placeholder="First name" name="fname"> -->
+                                </div>
+                            {% endfor %}
+                            <div class="form-group">
+                                <a href="{% url 'login' %}">Login?</a>
+                            </div>
+                            <!-- <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Last name" name="lname">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Username" name="username">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email" name="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password" name="password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm password" name="confirm_password">
+                            </div>-->
+                            <div class="form-group">
+                                <input type="submit" value="Register" class="btn btn-primary py-3 px-5">
+                            </div> 
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
